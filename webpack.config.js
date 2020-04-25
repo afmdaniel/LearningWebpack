@@ -4,6 +4,7 @@ const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     mode: devMode? 'development' : 'production',
@@ -29,6 +30,10 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: 'assets/css/style.css'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'src/index.html'
         })
     ],
     module: {
@@ -61,7 +66,11 @@ module.exports = {
             options: {
                 outputPath: 'assets/img',
             }
+        },
+        {
+            test:/\.html$/,
+            loader: 'html-loader'
         }
-    ]
+        ]
     }
 }
