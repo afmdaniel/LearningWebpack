@@ -12,6 +12,10 @@ module.exports = {
         filename: devMode? 'assets/js/main.js' : 'assets/js/main.min.js' ,
         path: __dirname + '/public'
     },
+    devServer: {
+        contentBase: "./public",
+        port: 9000
+    },
     optimization: {
         minimizer: [
             new UglifyJsPlugin({

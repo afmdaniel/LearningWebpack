@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack",
+    "start": "webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack"
   },
   "repository": {
@@ -28,7 +28,8 @@
     "style-loader": "^1.2.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
   "bugs": {
     "url": "https://github.com/afmdaniel/LearningWebpack/issues"
