@@ -1,3 +1,8 @@
 body {
     background-color: #444444;
+    background-image: url(../img/logo.png);
+    background-size: 50vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
 }

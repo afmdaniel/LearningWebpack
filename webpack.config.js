@@ -30,19 +30,31 @@ module.exports = {
         rules: [{
             test: /\.s?[ac]ss$/,
             use: [
-                MiniCssExtractPlugin.loader,
+                {
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                        publicPath: '../../'
+                    }
+                },
                 'css-loader', // Interpreta @import, url()...
                 'sass-loader'
             ]
         },
         {
-            test: /.js$/,
+            test: /\.js$/,
             exclude: /(node_modules|bower_components)/,
             use: {
                 loader: 'babel-loader',
                 options: {
                     presets: ['@babel/preset-env']
                 }
+            }
+        },
+        {
+            test: /\.(png|svg|jpg|gif)$/,
+            loader: 'file-loader',
+            options: {
+                outputPath: 'assets/img',
             }
         }
     ]
