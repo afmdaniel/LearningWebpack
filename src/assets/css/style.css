@@ -6,3 +6,8 @@ body {
     background-position: center;
     height: 100vh;
 }
+
+.pushed {
+    background-color: black;
+    background-image: url(../img/logo2.png);
+    } 
